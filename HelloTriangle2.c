@@ -6,6 +6,8 @@ sudo apt-get install libglew-dev
 
 sudo apt-get install freeglut3-dev
 
+gcc -o HelloTriangle HelloTriangle.c -lGL -lglut -lGLEW
+
 */
 
 #include <GL/glew.h>
