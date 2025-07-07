@@ -1,6 +1,41 @@
+Keyboard shortcuts to rotate map.
 
-Keyboard shortcuts to rotate map?  Or perhaps mouse movement to orbit around 3D object.
+Keyboard shortcuts to move from one location to another on the map.
 
+Mouse movement to orbit around 3D object?
 
+Determine if external models or internal models will be used.
+	External models would be formatted text files that represent a final model in the game.
+		Can be modified by others in the class using a seperate modeling tool.
+		Can put the models online and let people play with them in the browser and share them online.
+		Distribution can be more difficuty for students as more than one file needs to be sent.
+	Internal models are made from C code that is embedded into the game engine itself.
+		Very much so a programmer art type of methodology.
+		Building code must not be too slow or using the external model files will be much faster.
+		Especially on a Raspberry Pi system.
 
+When program starts it opens standard file location and reads model information from there.
 
+Attempt to use plain C code in project to generate models.
+
+	Write some functions to generate a cube, make some changes to the cube.
+
+	typedef tuple {
+		float x,y,z,w;
+	};
+
+	genCube(tuple);
+	genColorCube(tuple, tuple);
+
+Modify verticies using a function call.
+	modVertColor(tuple);
+	modVertPosition(tuple);
+
+Get some organization around how models themselves are managed:
+	typedef model {
+		float verts[];
+		int vertCount;
+	};
+	
+Understand how the animation will be designed by creating a simple animated model to demonstrate.
+(Much of the contents of manual will depend on this design.)
