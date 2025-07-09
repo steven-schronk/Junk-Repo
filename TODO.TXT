@@ -1,3 +1,15 @@
+
+Guiding Principles:
+
+	Keep everything as simple as possible making use of text files and old school tools.
+
+
+What problem are we trying to solve?
+
+	Make some proceedural models similar to Starcraft to put onto personal website and school website.
+	
+
+
 Keyboard shortcuts to rotate map.
 
 Keyboard shortcuts to move from one location to another on the map.
