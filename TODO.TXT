@@ -15,10 +15,42 @@ Short Term Experiment I:
 	
 	Try to use plain C first.
 		Plain C does not have any of the niceties that C++ has for vectors.
-		Missing the ability to rotate, pan, zoom the model from the start.
+		I'm missing the ability to rotate, pan, zoom the model from the start.
 		Looks like 2D is the only way to go?
-		Using some graph paper a person can draw in 2D what characters are needed for the artwork.  3D looks doable but quickly becomes problematic. Too much time spent thinking about what the coordinates are of the individial pieces.
 		
+		Using some graph paper a person can draw in 2D what characters are needed for the artwork.
+				
+		Drawing the simplest of 2D letters by hand with verticies is very cumbersome and painful. Moreover, the volume of C code produced is suprisingly large in general and would result in a large volume of source code to represent a small amount of geometry.
+				
+			vVertices[0] = 0.2f;
+			vVertices[1] = 0.2f;
+			vVertices[2] = 0.0f;
+
+			vVertices[3] = 0.2f;
+			vVertices[4] = 0.3f;
+			vVertices[5] = 0.0f;
+			
+			vVertices[6] = 0.3f;
+			vVertices[7] = 0.3f;
+			vVertices[8] = 0.0f;
+			
+			vVertices[9] = 0.3f;
+			vVertices[10] = 0.2f;
+			vVertices[11] = 0.0f;    
+		  
+			vVertices[12] = 0.2f;
+			vVertices[13] = 0.2f;
+			vVertices[14] = 0.0f;  		
+		
+		
+		Hand hacking a huge array is also painful and even more tedious in general:
+	
+		vVerticies[] = { 0.2f, 0.2f, 0.0f, 0.2f, 0.3f, 0.0f ... }
+		
+		Moreover if your rebuild time is very slow at all this can make the process seem worse still. This is being compiled on a Raspberry Pi 2 which isn't aweful but still is a lot of blank staring at a screen.
+	
+		3D looks doable but quickly becomes problematic. Too much time spent thinking about what the coordinates are of the individial pieces.
+
 	Write some helper functions to create basic shapes, modify verticies, set color for one vertex and then set color for a range of verticies. (Some function examples are listed below).
 	
 Short Term Experiment II:
