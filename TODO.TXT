@@ -1,14 +1,29 @@
 
 Guiding Principles:
 
-	Keep everything as simple as possible making use of text files and old school tools.
-
+	Keep everything as simple as possible making use of text files and old school tools. All tools required need to be open source and readily available.
+	
+	Light enough to be built and run on a Raspberry Pi.  This inlcudes building the tools as well as the final product.
 
 What problem are we trying to solve?
 
 	Make some proceedural models similar to Starcraft to put onto personal website and school website.
 	
+Short Term Experiment I:
 
+	Understand if you can use text files or just plain C to make a simple 3D model for a simple game.
+	
+	Try to use plain C first.
+		Plain C does not have any of the niceties that C++ has for vectors.
+		Missing the ability to rotate, pan, zoom the model from the start.
+		Looks like 2D is the only way to go?
+		Using some graph paper a person can draw in 2D what characters are needed for the artwork.  3D looks doable but quickly becomes problematic. Too much time spent thinking about what the coordinates are of the individial pieces.
+		
+	Write some helper functions to create basic shapes, modify verticies, set color for one vertex and then set color for a range of verticies. (Some function examples are listed below).
+	
+Short Term Experiment II:
+
+	Animate the model created from Experiment I.
 
 Keyboard shortcuts to rotate map.
 
@@ -51,3 +66,56 @@ Get some organization around how models themselves are managed:
 	
 Understand how the animation will be designed by creating a simple animated model to demonstrate.
 (Much of the contents of manual will depend on this design.)
+
+
+FerrisMakesDemos Notes
+
+Needed lower level
+
+Several Global Variables exist:
+	width of window in pixels
+	height of window in pixels
+	time
+
+Execution starts at the master position, then goes down one step at a time. Each box is a single instruction known as an operator.
+Each square is a set on a map to operators.
+
+Each Operator has 0 or more parameters that are strings 
+Operator strings can be mathematical expressions.
+
+TODO: Make clear operator.
+	Clears the screen has three parameters red, green & blue. Each parameter is a float.
+std::map<int, int> m{{0,0}}
+
+When putting data into an operator that does not work this log is generated:
+CompileError { data: undefinedvar("hi"), source: source { pos: (7,0 ), expr_name" "green" }}
+
+Operators are tagged enums that have a bunch of different kinds of operators.
+
+Example Operators:
+	"lc origin..."  (Local operator)
+		creates a local variable named origin
+		operator finds variable named "origin" pushes it onto the stack
+	
+	"cl aspect" (call operator)
+	"if width..."  (Conditional operator)
+	"sb aspect..."  (Subroutine operator) name: "aspectGreater"
+		sb says to call a subroutine with the name as a string to the right
+	"vp " is a ViewPoint Operator
+	"rt " is a Render Target Operator
+	
+Each operator has an expression represented by strings.
+
+A call operator will call the cell to the left.
+Execution stops when the next cell is empty.
+
+Some operators have operations that are scoped
+
+TODO: Understand how we can make a JIT that converts these code strings into executable code. This code should be executed on the fly each time a change is made.  (This code may be very operating system dependant).  Instead of making this binary code perhaps it could be interpreted and read one line at a time from an editor.
+
+TODO: When a change is made to the code and it is saved, the system notices it, recompiles and runs it automatically. Need to find out how to do this (which may also be operating system dependant).
+
+https://www.youtube.com/watch?v=p9Obe-Xg35o&list=PL-sXmdrqqYYeyUpx7BvKXpcw8EbFQLR70&index=2
+
+***** Stopped at 17:53  *********
+
