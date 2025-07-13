@@ -3,7 +3,7 @@ Guiding Principles:
 
 	Keep everything as simple as possible making use of text files and old school tools. All tools required need to be open source and readily available.
 	
-	Light enough to be built and run on a Raspberry Pi.  This inlcudes building the tools as well as the final product.
+	Light enough to be built and run on a Raspberry Pi. This inlcudes building the tools as well as the final product.
 
 What problem are we trying to solve?
 
@@ -19,7 +19,7 @@ Short Term Experiment I:
 		Looks like 2D is the only way to go?
 		
 		Using some graph paper a person can draw in 2D what characters are needed for the artwork.
-				
+
 		Drawing the simplest of 2D letters by hand with verticies is very cumbersome and painful. Moreover, the volume of C code produced is suprisingly large in general and would result in a large volume of source code to represent a small amount of geometry.
 				
 			vVertices[0] = 0.2f;
@@ -42,17 +42,18 @@ Short Term Experiment I:
 			vVertices[13] = 0.2f;
 			vVertices[14] = 0.0f;  		
 		
-		
 		Hand hacking a huge array is also painful and even more tedious in general:
 	
 		vVerticies[] = { 0.2f, 0.2f, 0.0f, 0.2f, 0.3f, 0.0f ... }
 		
 		Moreover if your rebuild time is very slow at all this can make the process seem worse still. This is being compiled on a Raspberry Pi 2 which isn't aweful but still is a lot of blank staring at a screen.
-	
+
 		3D looks doable but quickly becomes problematic. Too much time spent thinking about what the coordinates are of the individial pieces.
 
 	Write some helper functions to create basic shapes, modify verticies, set color for one vertex and then set color for a range of verticies. (Some function examples are listed below).
-	
+
+	Maybey write a tool that takes in the description of a 3D model and converts it into a C program that gets compiled in the game.  The tool would be a compiler for a Domain Specific Language.
+
 Short Term Experiment II:
 
 	Animate the model created from Experiment I.
@@ -150,4 +151,60 @@ TODO: When a change is made to the code and it is saved, the system notices it, 
 https://www.youtube.com/watch?v=p9Obe-Xg35o&list=PL-sXmdrqqYYeyUpx7BvKXpcw8EbFQLR70&index=2
 
 ***** Stopped at 17:53  *********
+
+
+
+DoomEd Notes
+
+
+All of the DoomEd files are flat text files.
+Zoom settings: 3.135, 6.25, 12.5, 25, 50, 100, 200, 400
+
+Grid snaps at different levels. Levels go from 1 to 64. The drid is drawn on the map in two different sizes: 1. Wider, darker lines every 8x8 and thinner lighter lines each grid location.
+
+Tools Menu:
+	Select				Pick something on the map to view its details in the line inspector
+	Poly line
+	Line
+	Zoom
+	Move				Drag and move map around on screen.
+	Selexctor get/fill
+	New thing
+	Launch & Save
+
+
+Error log window shows text of errors in system.
+
+Line Inspector:
+
+
+DWD file extension
+	Doom World Definition
+	
+https://github.com/teefoss/doombsp/blob/master/E1M1.dwd
+
+WorldServer version 4
+
+lines:475
+(1088,-3680) to (1024,-3680) : 1 : 0 : 0
+    0 (0 : - / - / DOOR3 )
+    0 : FLOOR4_8 72 : CEIL3_5 255 1 0
+(1024,-3680) to (1024,-3648) : 1 : 0 : 0
+    0 (0 : - / - / LITE3 )
+    0 : FLOOR4_8 72 : CEIL3_5 255 1 0	
+
+...
+
+things:138
+(1056,-3616, 90) :1, 7
+(1008,-3600, 90) :2, 7
+(1104,-3600, 90) :3, 7
+(960,-3600, 90) :4, 7
+(288,-3104, 90) :48, 7
+(288,-3360, 90) :48, 7
+(528,-3312, 90) :2028, 7
+(528,-3152, 90) :2028, 7
+
+
+Points on map (at the end of a line) can be seperated and fused at will.
 
