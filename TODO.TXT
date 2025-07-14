@@ -208,3 +208,19 @@ things:138
 
 Points on map (at the end of a line) can be seperated and fused at will.
 
+
+**************
+
+Online Question
+
+
+Am I going the wrong direction?
+
+Want to create a tiny game using some proceedualy generated 3D models. Bascially an abstract strategy game with pieces that move from one square on a board and fight with each other similar to Starcraft. I have gotten stuck attempting to make the models and get them animated.
+
+I've tried to make some models using graph paper and hand typing the verticies into a vertex array.  This is very painful and making anything neat is bascially impossible.
+
+Also tried making something using the C programming language directly, but build cycle is pretty slow and trying to find which vertex is being manipulated can be frustrating. Imagine making a icoshphere and needing to figure out why a single vertex is off or the wrong color or something.
+
+Bascially looking for a tool or technique to make programmer art a little better using some basic geometric shapes.
+
