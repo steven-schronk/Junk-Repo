@@ -224,3 +224,15 @@ Also tried making something using the C programming language directly, but build
 
 Bascially looking for a tool or technique to make programmer art a little better using some basic geometric shapes.
 
+*****************
+
+Use Different coordinate systems for each team:
+
+Cartisian Coordinates
+	Geometry is mostly made of squares and cubes.
+
+Polar Coordinates
+	Mostly cylindrical objects with flat tops and bottoms.
+
+Spherical Coordinates
+	Everything is a sphere or a frustrum.
